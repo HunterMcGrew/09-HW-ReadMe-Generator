@@ -14,40 +14,63 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
     {
         type: "input",
-        name: "projectTitle",
         message: "What is the Project Title?",
-
-        // response: "string"
+        name: "projectTitle",
+        validate: (answer) => {
+            if (answer.length < 1) {
+                console.log("\nPlease enter a valid Project Title.");
+            }
+        }
     },
     {
         type: "input",
         message: "Describle the Project:",
         name: "description",
-        // response: "string"
+        validate: (answer) => {
+            if (answer.length < 1) {
+                console.log("\nPlease enter a valid Project Description.");
+            }
+        }
     },
     {
         type: "input",
         message: "Installation Instructions:",
         name: "installation",
-        // response: "string"
+        validate: (answer) => {
+            if (answer.length < 1) {
+                console.log("\nPlease enter valid Installation Instructions.");
+            }
+        }
     },
     {
         type: "input",
         message: "Usage Information:",
         name: "usage",
-        // response: "string"
+        validate: (answer) => {
+            if (answer.length < 1) {
+                console.log("\nPlease give Usage Information.");
+            }
+        }
     },
     {
         type: "input",
         message: "Contribution Guidelines",
         name: "contribute",
-        // response: "string"
+        validate: (answer) => {
+            if (answer.length < 1) {
+                console.log("\nPlease enter a valid response.");
+            }
+        }
     },
     {
         type: "input",
         message: "Test Instructions",
         name: "test",
-        // response: "string"
+        validate: (answer) => {
+            if (answer.length < 1) {
+                console.log("\nPlease enter Testing Instructions.");
+            }
+        }
     }
 ]
 
@@ -58,30 +81,6 @@ function writeToFile(fileName, data) { // do i need filename?
         if (err) {return console.log(err);}
     })
 
-    // fs.writeFile("README.md", answers)
-    // // how do i use the markdown file here???
-    // `
-    // # ${projectTitle}
-
-    // ${description}
-
-    // ## Installation Instructions
-
-    // ${installation}
-
-    // ## Usage
-
-    // ${usage}
-
-    // ## Contributing
-
-    // ${contribute}
-
-    // ## Test
-
-    // ${test}
-
-    // `
         // maybe a rest??? 
         // maybe import markdown functions here?????????? <=
 }

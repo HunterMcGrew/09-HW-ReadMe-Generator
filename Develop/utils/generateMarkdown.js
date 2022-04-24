@@ -14,23 +14,23 @@
 function generateMarkdown(answers) {
   const markdown = `# ${"projectTitle"}
 
-  ${"description"}
+  ${answers.description}
 
   ## Installation Instructions
 
-  ${"installation"}
+  ${answers.installation}
 
   ## Usage
 
-  ${"usage"}
+  ${answers.usage}
 
   ## Contributing
 
-  ${"contribute"}
+  ${answers.contribute}
 
   ## Test
 
-  ${"test"}
+  ${answers.test}
 `;
 return markdown;
 }
