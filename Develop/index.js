@@ -99,6 +99,12 @@ const questions = [
             }
             return true;
         }
+    },
+    {
+        type: "list",
+        message: "What license are you using for your project?",
+        choices: ["\n\nMIT", "GPLv2", "Apache", "GPLv3", "BSD 3-clause\n"],
+        name: "license"
     }
 ]
 
