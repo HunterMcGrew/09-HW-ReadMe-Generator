@@ -18,8 +18,9 @@ const questions = [
         name: "projectTitle",
         validate: (answer) => {
             if (answer.length < 1) {
-                console.log("\nPlease enter a valid Project Title.");
+                return console.log("\n\nPlease enter a valid Project Title.\n");
             }
+            return true;
         }
     },
     {
@@ -28,8 +29,9 @@ const questions = [
         name: "description",
         validate: (answer) => {
             if (answer.length < 1) {
-                console.log("\nPlease enter a valid Project Description.");
+                return console.log("\n\nPlease enter a valid Project Description.\n");
             }
+            return true;
         }
     },
     {
@@ -38,8 +40,9 @@ const questions = [
         name: "installation",
         validate: (answer) => {
             if (answer.length < 1) {
-                console.log("\nPlease enter valid Installation Instructions.");
+                return console.log("\n\nPlease enter valid Installation Instructions.\n");
             }
+            return true;
         }
     },
     {
@@ -48,28 +51,53 @@ const questions = [
         name: "usage",
         validate: (answer) => {
             if (answer.length < 1) {
-                console.log("\nPlease give Usage Information.");
+                return console.log("\n\nPlease give Usage Information.\n");
             }
+            return true;
         }
     },
     {
         type: "input",
-        message: "Contribution Guidelines",
+        message: "Contribution Guidelines:",
         name: "contribute",
         validate: (answer) => {
             if (answer.length < 1) {
-                console.log("\nPlease enter a valid response.");
+                return console.log("\n\nPlease enter a valid response.\n");
             }
+            return true;
         }
     },
     {
         type: "input",
-        message: "Test Instructions",
+        message: "Test Instructions:",
         name: "test",
         validate: (answer) => {
             if (answer.length < 1) {
-                console.log("\nPlease enter Testing Instructions.");
+                return console.log("\n\nPlease enter Testing Instructions.\n");
             }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        message: "Please enter your email address:",
+        name: "email",
+        validate: (answer) => {
+            if (answer.length < 1) {
+                return console.log("\n\nPlease enter a valid email address.");
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        message: "What is your GitHub Username?",
+        name: "github",
+        validate: (answer) => {
+            if (answer.length < 1) {
+                return console.log("\n\nPlease enter a valid GitHub username.\n");
+            }
+            return true;
         }
     }
 ]
@@ -80,26 +108,15 @@ function writeToFile(fileName, data) { // do i need filename?
     fs.writeFile(filename, data, err => {
         if (err) {return console.log(err);}
     })
-
-        // maybe a rest??? 
-        // maybe import markdown functions here?????????? <=
 }
 
 // TODO: Create a function to initialize app
 function init() {
     // write inquirer prompt here 
     const answers = inquirer.prompt(questions)
-    // call writeToFile inside my .then()
-    // .then((data) => {
-    //     writeToFile("README.md", data)
     .then((answers) => fs.writeFileSync("README.md", generateMarkdown(answers)))
-    // .then(() => writeFileAsync("README.md", markdown))
-    // .then(() => writeToFile())
     .catch((err) => console.log(err));
-    
 }
-    // how to send answers from users into markdown functions?? 
-    // pass answers to write to file here   (DATA)
 
 // Function call to initialize app
 init();

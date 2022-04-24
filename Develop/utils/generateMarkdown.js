@@ -12,9 +12,18 @@
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
-  const markdown = `# ${"projectTitle"}
+  const markdown = `# ${answers.projectTitle}
 
   ${answers.description}
+
+  ## Table of Contents
+
+  [Installation Instructions](#Installation-Instructions)
+  [Usage](#Usage)
+  [Contributing](#Contributing)
+  [Test](#Test)
+  [Questions](#Questions)
+  
 
   ## Installation Instructions
 
@@ -31,6 +40,12 @@ function generateMarkdown(answers) {
   ## Test
 
   ${answers.test}
+
+  ## Questions
+
+  My GitHub: <https://github.com/${answers.github}/>
+
+  If you have any additional questions, feel free to contact me by email: <${answers.email}>
 `;
 return markdown;
 }
