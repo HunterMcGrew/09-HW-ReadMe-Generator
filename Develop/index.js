@@ -103,13 +103,13 @@ const questions = [
     {
         type: "list",
         message: "What license are you using for your project?",
-        choices: ["\n\nMIT", "GPLv2", "Apache", "GPLv3", "BSD 3-clause\n"],
+        choices: ["MIT", "GPLv2", "Apache", "GPLv3", "BSD 3-clause\n"],
         name: "license"
     }
 ]
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { // do i need filename?
+function writeToFile(fileName, data) { 
     // use fs.writefile here
     fs.writeFile(filename, data, err => {
         if (err) {return console.log(err);}
