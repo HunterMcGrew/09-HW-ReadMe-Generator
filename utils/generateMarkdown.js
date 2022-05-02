@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// TODO: Create a function to generate markdown for README
+// function to generate body of ReadMe File
 
 function generateMarkdown(answers) {
   var license = "";
@@ -62,5 +61,5 @@ function generateMarkdown(answers) {
 `;
 return markdown;
 }
-
+// export function
 module.exports = generateMarkdown;

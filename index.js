@@ -1,16 +1,11 @@
-// TODO: Include packages needed for this application
+// required packages
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
+// required module
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// Steps to Solve
-    // 1. User answers questions
-    // 2. Pass answers in the .then()
-    // 3. Hand offf to Generate Markdown to create MD syntax
-    // 4. pass MD to writeToFile
-
-// TODO: Create an array of questions for user input
+// object array for user questions/data
 const questions = [
     {
         type: "input",
@@ -108,7 +103,7 @@ const questions = [
     }
 ]
 
-// TODO: Create a function to write README file
+// writes ReadMe file to FileSystem
 function writeToFile(fileName, data) { 
     // use fs.writefile here
     fs.writeFile(filename, data, err => {
@@ -116,11 +111,11 @@ function writeToFile(fileName, data) {
     })
 }
 
-// TODO: Create a function to initialize app
+// function to perform all the functions needed in order to produce ReadMe file
 function init() {
     // write inquirer prompt here 
     const answers = inquirer.prompt(questions)
-    .then((answers) => fs.writeFileSync("README.md", generateMarkdown(answers)))
+    .then((answers) => fs.writeFileSync("./dist/README.md", generateMarkdown(answers)))
     .catch((err) => console.log(err));
 }
 
