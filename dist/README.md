@@ -2,7 +2,7 @@
   
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-  A simple terminal-based ReadMe generator
+  A simple terminal-based ReadMe Generator
 
   ## Table of Contents
 
@@ -16,19 +16,19 @@
 
   ## Installation Instructions
 
-  open your terminal, run "npm i" to install node modules, and run the program by typing "node index.js"
+  Install required node modules by typing, "npm i"
 
   ## Usage
 
-  Upon starting this app by typing "node index.js", you will be prompted with questions regarding your readme file you want to generate. Fill out the questions to populate them on your new readme!
+  Run the application by typing "node index.js". Upon start you will be prompted with many questions regarding what you want on your soon to be readme! Answer the questions and a readme will be generated!
 
   ## Contributing
 
-  Not Applicable
+  not applicable 
 
   ## Test
 
-  No Testing for this app
+  No Tests for this app
 
   ## License
 
