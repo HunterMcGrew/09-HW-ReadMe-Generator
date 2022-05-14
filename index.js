@@ -2,7 +2,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-// required module
+// required exported module
 const generateMarkdown = require("./utils/generateMarkdown");
 
 // object array for user questions/data
@@ -113,11 +113,13 @@ function writeToFile(fileName, data) {
 
 // function to perform all the functions needed in order to produce ReadMe file
 function init() {
-    // write inquirer prompt here 
+    // takes question array and grabs answers
     const answers = inquirer.prompt(questions)
+    // takes answers from prompts, sends it through the generateMarkdown function, and outputs file in the "dist" folder as "README.md"
     .then((answers) => fs.writeFileSync("./dist/README.md", generateMarkdown(answers)))
+    // if there are any errors, log it
     .catch((err) => console.log(err));
 }
 
-// Function call to initialize app
+// Function call to initialize app upon starting index.js
 init();

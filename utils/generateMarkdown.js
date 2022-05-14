@@ -61,5 +61,6 @@ function generateMarkdown(answers) {
 `;
 return markdown;
 }
+
 // export function
 module.exports = generateMarkdown;
